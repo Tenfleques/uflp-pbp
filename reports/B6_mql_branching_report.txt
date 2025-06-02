@@ -1,0 +1,32 @@
+================================================================================
+B6: MQL BRANCHING ANALYSIS REPORT
+================================================================================
+Generated: 2025-06-03 02:48:02
+
+MQL BRANCHING PERFORMANCE SUMMARY:
+--------------------------------------------------
+Total instances: 37
+Instances tested with MQL: 25
+Instances skipped (too large): 12
+Instances solved by MQL: 0
+MQL success rate: 0.0%
+
+MQL BRANCHING STATISTICS:
+--------------------------------------------------
+Mean branchings per instance: 5.0
+Median branchings: 5.0
+Max branchings: 5
+
+KHUMAWALA EFFECTIVENESS WITHIN MQL:
+--------------------------------------------------
+Mean nodes solved by Khumawala: 0.0
+Max nodes solved by Khumawala: 0
+
+MQL PERFORMANCE BY PROBLEM SIZE:
+--------------------------------------------------
+                   Solved_Count  Mean_Branchings
+size_category                                   
+Small (≤20)                   0              5.0
+Medium (21-30)                0              5.0
+Large (31-50)                 0              NaN
+Extra Large (>50)             0              NaN

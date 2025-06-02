@@ -1,0 +1,4 @@
+instance_name,num_customers,num_facilities,file_path,B1_linear_terms,B2_quadratic_terms,B3_cubic_terms,B4_nonlinear_terms,total_terms,B5_rule1_applications,B5_rule2_applications,B5_variables_fixed_rule1,B5_variables_fixed_rule2,B5_total_variables_fixed,B5_solved_to_optimality,B5_problem_reduction_percentage,B6_mql_solved_to_optimality,B6_mql_branchings,B6_mql_nodes_solved_by_khumawala,B7_flba_solved_to_optimality,B7_flba_branchings
+cap71,50,16,data/cap/cap71.txt,17,4,4,542,560,1,1,3,10,13,False,81.25,False,5,0,False,1
+cap64,50,16,data/cap/cap64.txt,17,4,4,542,560,1,1,8,4,12,False,75.0,False,5,0,False,1
+cap72,50,16,data/cap/cap72.txt,17,4,4,542,560,1,1,7,5,12,False,75.0,False,5,0,False,1

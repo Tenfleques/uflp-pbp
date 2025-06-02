@@ -1,0 +1,56 @@
+================================================================================
+COMPREHENSIVE KHUMAWALA ANALYSIS SUMMARY REPORT
+================================================================================
+
+OVERALL STATISTICS:
+  Total instances analyzed: 5
+  Solved to optimality by Khumawala rules: 5
+  Success rate: 100.0%
+
+TERM ANALYSIS SUMMARY (B1-B4):
+  Average linear terms (B1): 5.4
+  Average quadratic terms (B2): 3.0
+  Average cubic terms (B3): 2.6
+  Average non-linear terms (B4): 8.0
+
+KHUMAWALA RULES SUMMARY (B5):
+  Average variables fixed by Rule 1: 4.2
+  Average variables fixed by Rule 2: 1.2
+  Average total variables fixed: 5.4
+  Average problem reduction: 100.0%
+
+MQL BRANCHING SUMMARY (B6):
+  Instances solved by MQL branching: 5/5
+  MQL success rate: 100.0%
+  Average MQL branchings per instance: 0.0
+  Average nodes solved by Khumawala in MQL: 1.0
+
+ANTIKHUMAWALA RULES SUMMARY (B7):
+  LBA instances solved to optimality: 0/5 (0.0%)
+  SBA instances solved to optimality: 0/5 (0.0%)
+  FLBA instances solved to optimality: 5/5 (100.0%)
+  FSBA instances solved to optimality: 5/5 (100.0%)
+  SLBA instances solved to optimality: 5/5 (100.0%)
+  SSBA instances solved to optimality: 5/5 (100.0%)
+  Average LBA branchings per instance: 0.0
+  Average SBA branchings per instance: 0.0
+  Average FLBA branchings per instance: 0.0
+  Average FSBA branchings per instance: 0.0
+  Average SLBA branchings per instance: 0.0
+  Average SSBA branchings per instance: 0.0
+  Total branching rule applications: 30
+
+INSTANCE-BY-INSTANCE RESULTS:
+Instance             Size       B1    B2    B3    B4    R1    R2    Opt  
+--------------------------------------------------------------------------------
+Small_Instance       2x3        3     0     0     0     2     1     Yes  
+Medium_Instance      4x5        5     3     3     6     4     1     Yes  
+Large_Instance       5x7        7     1     1     3     6     1     Yes  
+Khumawala_Test       4x4        4     3     2     5     3     1     Yes  
+Random_Large         6x8        8     8     7     26    6     2     Yes  
+================================================================================
+
+Legend:
+  B1-B4: Number of linear, quadratic, cubic, and non-linear terms
+  R1-R2: Variables fixed by 1st and 2nd Khumawala rules
+  Opt: Solved to optimality by Khumawala rules alone

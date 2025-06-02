@@ -1,0 +1,18 @@
+================================================================================
+B3: CUBIC TERMS ANALYSIS REPORT
+================================================================================
+Generated: 2025-06-03 02:48:02
+
+CUBIC TERMS SUMMARY STATISTICS:
+----------------------------------------
+Mean cubic terms per instance: 5.9
+Median cubic terms: 4
+Standard deviation: 2.8
+Range: 4 - 10
+
+CORRELATION WITH QUADRATIC TERMS: 0.944
+
+COMBINED B2+B3 TERMS ANALYSIS:
+----------------------------------------
+Mean combined terms: 12.5
+Range: 8 - 20

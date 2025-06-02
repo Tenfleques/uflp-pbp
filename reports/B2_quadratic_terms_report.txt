@@ -1,0 +1,26 @@
+================================================================================
+B2: QUADRATIC TERMS ANALYSIS REPORT
+================================================================================
+Generated: 2025-06-03 02:48:02
+
+QUADRATIC TERMS SUMMARY STATISTICS:
+----------------------------------------
+Mean quadratic terms per instance: 6.6
+Median quadratic terms: 6
+Standard deviation: 2.5
+Range: 4 - 10
+
+QUADRATIC TERMS DISTRIBUTION:
+----------------------------------------
+ 4 quadratic terms: 13 instances (35.1%)
+ 6 quadratic terms: 12 instances (32.4%)
+10 quadratic terms: 12 instances (32.4%)
+
+QUADRATIC TERMS BY PROBLEM SIZE:
+----------------------------------------
+                   mean  std  count
+size_category                      
+Small (≤20)         4.0  0.0     13
+Medium (21-30)      6.0  0.0     12
+Large (31-50)      10.0  0.0     12
+Extra Large (>50)   NaN  NaN      0

@@ -1,0 +1,21 @@
+{
+  "generation_timestamp": "2025-06-03 02:48:02",
+  "total_instances": 37,
+  "problem_size_range": {
+    "min_facilities": 16,
+    "max_facilities": 50,
+    "mean_facilities": 29.945945945945947
+  },
+  "b1_b4_summary": {
+    "mean_linear_terms": 29.972972972972972,
+    "mean_quadratic_terms": 6.594594594594595,
+    "mean_cubic_terms": 5.945945945945946,
+    "mean_nonlinear_terms": 768.3783783783783
+  },
+  "b5_summary": {
+    "mean_reduction_percentage": 67.39864864864865,
+    "max_reduction_percentage": 81.25,
+    "instances_solved": 0,
+    "mean_variables_remaining": 10.891891891891891
+  }
+}

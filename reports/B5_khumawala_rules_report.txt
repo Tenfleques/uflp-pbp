@@ -1,0 +1,65 @@
+================================================================================
+B5: KHUMAWALA RULES ANALYSIS REPORT
+================================================================================
+Generated: 2025-06-03 02:48:02
+
+KHUMAWALA RULES PERFORMANCE SUMMARY:
+--------------------------------------------------
+Total instances analyzed: 37
+Instances solved to optimality: 0
+Success rate: 0.0%
+
+Mean problem reduction: 67.4%
+Median problem reduction: 68.0%
+Best reduction achieved: 81.2%
+Worst reduction: 52.0%
+
+INDIVIDUAL RULE EFFECTIVENESS:
+--------------------------------------------------
+1st Khumawala Rule (Facility Domination):
+  Mean variables fixed: 10.9
+  Max variables fixed: 25
+  Applied successfully: 37/37 instances
+
+2nd Khumawala Rule (Customer Forcing):
+  Mean variables fixed: 8.1
+  Max variables fixed: 17
+  Applied successfully: 37/37 instances
+
+PERFORMANCE BY PROBLEM SIZE:
+--------------------------------------------------
+                  B5_problem_reduction_percentage                        B5_total_variables_fixed variables_remaining
+                                             mean       std   min    max                     mean                mean
+size_category                                                                                                        
+Small (≤20)                             76.442308  2.740806  75.0  81.25                12.230769            3.769231
+Medium (21-30)                          68.000000  2.954196  64.0  72.00                17.000000            8.000000
+Large (31-50)                           57.000000  3.765875  52.0  62.00                28.500000           21.500000
+Extra Large (>50)                             NaN       NaN   NaN    NaN                      NaN                 NaN
+
+BEST PERFORMING INSTANCES:
+--------------------------------------------------
+instance_name  num_facilities  B5_total_variables_fixed  variables_remaining  B5_problem_reduction_percentage
+        cap71              16                        13                    3                            81.25
+        cap61              16                        13                    3                            81.25
+        cap41              16                        13                    3                            81.25
+        cap64              16                        12                    4                            75.00
+        cap72              16                        12                    4                            75.00
+        cap73              16                        12                    4                            75.00
+        cap63              16                        12                    4                            75.00
+        cap62              16                        12                    4                            75.00
+        cap74              16                        12                    4                            75.00
+        cap44              16                        12                    4                            75.00
+
+INSTANCES CLOSEST TO COMPLETE SOLUTION:
+--------------------------------------------------
+instance_name  num_facilities  B5_total_variables_fixed  variables_remaining  B5_problem_reduction_percentage
+        cap71              16                        13                    3                            81.25
+        cap61              16                        13                    3                            81.25
+        cap41              16                        13                    3                            81.25
+        cap64              16                        12                    4                            75.00
+        cap72              16                        12                    4                            75.00
+        cap73              16                        12                    4                            75.00
+        cap63              16                        12                    4                            75.00
+        cap62              16                        12                    4                            75.00
+        cap74              16                        12                    4                            75.00
+        cap44              16                        12                    4                            75.00

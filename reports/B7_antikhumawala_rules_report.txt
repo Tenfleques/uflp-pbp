@@ -1,0 +1,23 @@
+================================================================================
+B7: ANTIKHUMAWALA BRANCHING RULES ANALYSIS REPORT
+================================================================================
+Generated: 2025-06-03 02:48:02
+
+ANTIKHUMAWALA RULES PERFORMANCE SUMMARY:
+--------------------------------------------------
+Total instances: 37
+Instances tested with AntiKhumawala: 25
+Instances skipped (too large): 12
+Instances solved by FLBA: 0
+FLBA success rate: 0.0%
+
+FLBA BRANCHING STATISTICS:
+--------------------------------------------------
+Mean FLBA branchings: 1.0
+Median FLBA branchings: 1.0
+Max FLBA branchings: 1
+
+ANTIKHUMAWALA vs KHUMAWALA PERFORMANCE:
+--------------------------------------------------
+Mean Khumawala reduction before AntiKhumawala: 72.4%
+Instances solved by AntiKhumawala but not Khumawala alone: 0

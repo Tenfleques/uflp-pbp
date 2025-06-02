@@ -1,0 +1,41 @@
+================================================================================
+B4: NON-LINEAR TERMS ANALYSIS REPORT
+================================================================================
+Generated: 2025-06-03 02:48:02
+
+NON-LINEAR TERMS SUMMARY STATISTICS:
+----------------------------------------
+Mean non-linear terms per instance: 768.4
+Median non-linear terms: 745
+Standard deviation: 206.7
+Range: 542 - 1037
+
+NON-LINEAR TO TOTAL TERMS RATIO:
+----------------------------------------
+Mean ratio: 0.963 (96.3%)
+Median ratio: 0.968 (96.8%)
+Range: 0.953 - 0.968
+
+NON-LINEAR TERMS BY PROBLEM SIZE:
+----------------------------------------
+                  B4_nonlinear_terms      nonlinear_ratio     
+                                mean  std            mean  std
+size_category                                                 
+Small (≤20)                    542.0  0.0        0.967857  0.0
+Medium (21-30)                 745.0  0.0        0.967532  0.0
+Large (31-50)                 1037.0  0.0        0.953125  0.0
+Extra Large (>50)                NaN  NaN             NaN  NaN
+
+MOST COMPLEX INSTANCES (by non-linear terms):
+----------------------------------------
+instance_name  num_facilities  B4_nonlinear_terms  total_terms nonlinear_ratio
+       cap132              50                1037         1088           0.953
+       cap133              50                1037         1088           0.953
+       cap131              50                1037         1088           0.953
+       cap124              50                1037         1088           0.953
+       cap134              50                1037         1088           0.953
+       cap121              50                1037         1088           0.953
+       cap123              50                1037         1088           0.953
+       cap122              50                1037         1088           0.953
+       cap113              50                1037         1088           0.953
+       cap112              50                1037         1088           0.953
