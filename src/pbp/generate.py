@@ -317,6 +317,16 @@ def get_dep_list(num_vars, pbp: pd.DataFrame):
 
     return dep_list
 
+def count_linear_terms(pbp: pd.DataFrame):
+    return pbp[pbp['degree'] == 1]['coeffs'].count()
+def count_quadratic_terms(pbp: pd.DataFrame):
+    return pbp[pbp['degree'] == 2]['coeffs'].count()
+def count_cubic_terms(pbp: pd.DataFrame):
+    return pbp[pbp['degree'] == 3]['coeffs'].count()
+def count_non_linear_terms(pbp: pd.DataFrame, degree: int):
+    degree = max(degree, 2)
+    return pbp[(pbp['degree'] > 1) & (pbp['degree'] <= degree)]['coeffs'].count()
+
 # Examples
 if __name__ == "__main__":
     f = np.array([1000, 1200, 800, 1500, 900, 1100, 1300])
@@ -331,6 +341,17 @@ if __name__ == "__main__":
     cap_pbp_form = cap_to_pbp_df(c, f, verbose=True)
     print("cap_pbp_form")
     print(cap_pbp_form)
+
+    print("B1: linear terms")
+    print(count_linear_terms(cap_pbp_form))
+    print("B2: quadratic terms")
+    print(count_quadratic_terms(cap_pbp_form))
+    print("B3: cubic terms")
+    print(count_cubic_terms(cap_pbp_form))
+    print("B4: non-linear terms")
+    
+    for degree in range(2, c.shape[0] + 1):
+        print(f"Degree {degree}: {count_non_linear_terms(cap_pbp_form, degree)}")
     
 
 

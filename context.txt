@@ -1,0 +1,8 @@
+We need to find the following numbers of terms including the sizes of search trees based on different branching rules for each specific Beasley’s instance.
+B1. The number of non-zero linear terms;
+B2. The number of non-zero quadratic terms;
+B3. The number of non-zero cubic terms;
+B4. The total number of all non-linear terms.
+B5. For each of Beasley’s instances we indicate whether it is solved to optimality by 1st and 2nd Khumawala rules only including the total number of variables found by the 1st  Khumawala rule and the total number of variables found by the 2nd Khumawala rule.
+B6. The number of Beasley’s instances solved to optimality by 1st and 2nd Khumawala rules applied recursively within the MakeQuadraticLinear (MQL) branching rule where for each instance we indicate the total number of MQL branchings.
+B7. The number of Beasley’s instances solved to optimality by 1st and 2nd Khumawala rules applied recursively within each of antiKhumawala branching rules where for each instance we indicate the total number of antiKhumawala branching rules, namely, the LBA, SBA, FLBA, FSBA, SLBA, SSBA (will be explained later on) branching rules.

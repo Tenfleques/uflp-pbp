@@ -113,3 +113,9 @@ src/
 - Branch `feature/advanced-branching-rules` for B6-B7 development
 - Maintain backward compatibility with existing interfaces
 
+# TODO
+
+- [x] Comprehensive PBP cardinality report (degree 1 to m//2) in cap_instances_analysis.py
+- [x] Flatten pbp_cardinality_report into CSV columns for per-degree analysis
+- [x] Generate per-cardinality (degree) B_i reports (B1-B7) in generate_b1_b7_reports.py
+

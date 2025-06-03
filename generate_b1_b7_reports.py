@@ -455,7 +455,7 @@ class B1B7ReportGenerator:
         return "\n".join(report)
     
     def save_all_reports(self, output_dir='reports'):
-        """Generate and save all B1-B7 reports"""
+        """Generate and save all B1-B7 reports, including per-cardinality (degree) reports"""
         output_path = Path(output_dir)
         output_path.mkdir(exist_ok=True)
         
@@ -477,6 +477,55 @@ class B1B7ReportGenerator:
                 f.write(content)
             saved_files.append(str(filename))
             print(f"✅ Generated: {filename}")
+        
+        # Per-cardinality (degree) B_i reports
+        # Find all degree columns (e.g., degree_1_terms, degree_2_terms, ...)
+        degree_cols = [col for col in self.df.columns if col.startswith('degree_') and col.endswith('_terms')]
+        degree_cols.sort(key=lambda x: int(x.split('_')[1]))
+        
+        # For each B_i, generate a report for each degree
+        for i, (b_col, b_label) in enumerate([
+            ('B1_linear_terms', 'B1'),
+            ('B2_quadratic_terms', 'B2'),
+            ('B3_cubic_terms', 'B3'),
+            ('B4_nonlinear_terms', 'B4'),
+            ('B5_total_variables_fixed', 'B5'),
+            ('B6_mql_branchings', 'B6'),
+            ('B7_flba_branchings', 'B7')
+        ], start=1):
+            for deg_col in degree_cols:
+                deg_num = deg_col.split('_')[1]
+                report_lines = [
+                    f"={'='*76}",
+                    f"{b_label}: DEGREE {deg_num} TERMS REPORT",
+                    f"={'='*76}",
+                    f"Generated: {self.report_timestamp}",
+                    "",
+                    f"Summary for {b_label} and degree {deg_num} terms:",
+                    "-"*40
+                ]
+                if b_col in self.df.columns:
+                    # Show stats for this B_i and degree
+                    stats = self.df[deg_col].describe()
+                    report_lines.append(f"Total instances analyzed: {len(self.df)}")
+                    report_lines.append(f"Mean terms: {stats['mean']:.1f}")
+                    report_lines.append(f"Median terms: {stats['50%']:.0f}")
+                    report_lines.append(f"Std: {stats['std']:.1f}")
+                    report_lines.append(f"Range: {stats['min']:.0f} - {stats['max']:.0f}")
+                    report_lines.append("")
+                    # Top instances for this degree
+                    top = self.df.nlargest(10, deg_col)[['instance_name', 'num_facilities', deg_col]]
+                    report_lines.append(f"INSTANCES WITH HIGHEST DEGREE {deg_num} TERMS:")
+                    report_lines.append("-"*40)
+                    report_lines.append(top.to_string(index=False))
+                else:
+                    report_lines.append(f"No data for {b_label} in this results file.")
+                report_content = "\n".join(report_lines)
+                filename = output_path / f"{b_label}_degree_{deg_num}_report.txt"
+                with open(filename, 'w') as f:
+                    f.write(report_content)
+                saved_files.append(str(filename))
+                print(f"✅ Generated: {filename}")
         
         # Also save data summary as JSON
         summary_data = {

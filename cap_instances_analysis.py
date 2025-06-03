@@ -19,6 +19,7 @@ import gc
 from typing import List, Tuple, Dict, Any
 import logging
 from pathlib import Path
+from collections import defaultdict
 
 # Add src to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
@@ -192,6 +193,36 @@ def analyze_cap_instance_safe(filepath: str, memory_monitor: MemoryMonitor,
                     'B4_nonlinear_terms': term_analysis['nonlinear'],
                     'total_terms': len(pbp_df)
                 })
+
+                # Comprehensive report for different cardinalities (degree) up to m//2
+                max_degree = max(1, len(f) // 2)
+                degree_dist = analyzer.get_degree_distribution()
+                pbp_cardinality_report = {}
+                for d in range(1, max_degree + 1):
+                    pbp_cardinality_report[f'degree_{d}_terms'] = int(degree_dist.get(d, 0))
+                results['pbp_cardinality_report'] = pbp_cardinality_report
+                
+                # Output source polynomial cardinality report (before Khumawala rules)
+                max_degree = max(1, len(f) // 2)
+                coeff_stats_by_degree = defaultdict(list)
+                for _, row in pbp_df.iterrows():
+                    deg = row['degree']
+                    if 1 <= deg <= max_degree:
+                        coeff_stats_by_degree[deg].append(row['coeffs'])
+                rows = []
+                for deg in range(1, max_degree + 1):
+                    coeffs = coeff_stats_by_degree.get(deg, [])
+                    count = len(coeffs)
+                    rows.append({
+                        'degree': deg,
+                        'term_count': int(count),
+                        'coeff_mean': float(np.mean(coeffs)) if coeffs else 0.0,
+                        'coeff_std': float(np.std(coeffs)) if coeffs else 0.0,
+                        'coeff_min': float(np.min(coeffs)) if coeffs else 0.0,
+                        'coeff_max': float(np.max(coeffs)) if coeffs else 0.0
+                    })
+                os.makedirs('output', exist_ok=True)
+                pd.DataFrame(rows).sort_values('degree').to_csv(f'output/source_poly_{instance_name}.csv', index=False)
                 
                 # Clean up PBP data immediately
                 del pbp_df, analyzer
@@ -367,6 +398,11 @@ def main():
         
         try:
             result = analyze_cap_instance_safe(filepath, memory_monitor, verbose=args.verbose)
+            # Flatten pbp_cardinality_report into top-level columns
+            if 'pbp_cardinality_report' in result:
+                for k, v in result['pbp_cardinality_report'].items():
+                    result[k] = v
+                del result['pbp_cardinality_report']
             results.append(result)
             
             if not result.get('analysis_failed', False):
